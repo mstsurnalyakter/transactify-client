@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import PropTypes from "prop-types";
 import { useState } from 'react';
 import { createContext } from 'react'
 import { app } from '../firebase/firebase.config';
@@ -24,7 +25,7 @@ const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  
+
 
   const createUser = (email, password) => {
     setLoading(true);
